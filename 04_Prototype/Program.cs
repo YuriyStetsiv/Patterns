@@ -5,42 +5,39 @@ namespace _04_Prototype.Interfaces
 {
     class Program
     {
-        private static IFigure figure;
-        private static IFigure figureClone;
-
         static void Main(string[] args)
         {
-            figure = new Circle(10);
-            figureClone = figure.Clone();
+            IFigure figure = new Circle(10);
+            IFigure figureClone = figure.Clone();
 
-            GetInfo("Circle");
+            GetInfo(figure,figureClone);
 
             figure = new Rectangle(4, 5);
             figureClone = figure.Clone();
 
-            GetInfo("Rectangle");
+            GetInfo(figure, figureClone);
 
             figure = new Square(5);
             figureClone = figure.Clone();
 
-            GetInfo("Square");
+            GetInfo(figure, figureClone);
 
             figure = new Triangle(5,8,4);
             figureClone = figure.Clone();
 
-            GetInfo("Triangle");
+            GetInfo(figure, figureClone);
         }
 
         //Show resault
-        static void GetInfo(string figureName)
+        static void GetInfo(IFigure figure, IFigure figureClone)
         {
-            Console.WriteLine($"{figureName} original:");
+            Console.WriteLine($"{figure.GetType().Name} original:");
             Console.WriteLine($"Area: {figure.Area()}");
-            Console.WriteLine($"Peremiter: {figure.Peremiter()}");
+            Console.WriteLine($"Peremiter: {figure.Perimeter()}");
 
-            Console.WriteLine($"{figureName} clone:");
+            Console.WriteLine($"{figureClone.GetType().Name} clone:");
             Console.WriteLine($"Area: {figureClone.Area()}");
-            Console.WriteLine($"Peremiter: {figureClone.Peremiter()}\n");
+            Console.WriteLine($"Peremiter: {figureClone.Perimeter()}\n");
         }
     }
 }

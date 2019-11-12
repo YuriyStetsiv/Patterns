@@ -4,7 +4,7 @@ namespace _04_Prototype.Models
 {
     public class Square : IFigure
     {
-        private double _side;
+        private readonly double _side;
 
         public Square(double side)
         {
@@ -15,7 +15,7 @@ namespace _04_Prototype.Models
             return _side * _side;
         }
 
-        public double Peremiter()
+        public double Perimeter()
         {
             return 4 * _side;
         }

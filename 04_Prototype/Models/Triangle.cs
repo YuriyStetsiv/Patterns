@@ -4,9 +4,9 @@ namespace _04_Prototype.Models
 {
     public class Triangle : IFigure
     {
-        double _sideA;
-        double _sideB;
-        double _sideC;
+        private readonly double _sideA;
+        private readonly double _sideB;
+        private readonly double _sideC;
 
         public Triangle(double a, double b, double c)
         {
@@ -23,7 +23,7 @@ namespace _04_Prototype.Models
             return res;
         }
 
-        public double Peremiter()
+        public double Perimeter()
         {
             return _sideC + _sideB + _sideA;
         }

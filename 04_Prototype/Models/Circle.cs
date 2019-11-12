@@ -5,7 +5,7 @@ namespace _04_Prototype.Models
 {
     public class Circle : IFigure
     {
-        private double _radius;
+        private readonly double _radius;
 
         public Circle(double radius)
         {
@@ -17,7 +17,7 @@ namespace _04_Prototype.Models
             return Math.PI * Math.Pow(_radius, 2);
         }
 
-        public double Peremiter()
+        public double Perimeter()
         {
             return 2 * Math.PI * _radius;
         }

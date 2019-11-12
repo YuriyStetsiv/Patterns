@@ -4,8 +4,8 @@ namespace _04_Prototype.Models
 {
     public class Rectangle : IFigure
     {
-        private double _sideA;
-        private double _sideB;
+        private readonly double _sideA;
+        private readonly double _sideB;
 
         public Rectangle(double a, double b)
         {
@@ -18,7 +18,7 @@ namespace _04_Prototype.Models
             return _sideA * _sideB;
         }
 
-        public double Peremiter()
+        public double Perimeter()
         {
             return 2 * _sideA + 2 * _sideB;
         }
